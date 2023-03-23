@@ -72,7 +72,7 @@ def check_plots(
 
     if list_duplicates:
         log.warning("Checking for duplicate Plot IDs")
-        log.info("Plot filenames expected to end with -[64 char plot ID].plot")
+        log.info("Plot filenames expected to end with -[64 char plot ID].db")
 
     if list_duplicates:
         all_filenames: List[Path] = []

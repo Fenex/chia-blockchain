@@ -458,7 +458,7 @@ async def test_farmer_get_harvester_plots_endpoints(
     elif endpoint == FarmerRpcClient.get_harvester_plots_invalid:
         invalid_paths = add_plot_directories("invalid", 3)
         for dir_index, r in [(0, range(0, 6)), (1, range(6, 8)), (2, range(8, 13))]:
-            plots += [str(invalid_paths[dir_index] / f"{i}.plot") for i in r]
+            plots += [str(invalid_paths[dir_index] / f"{i}.db") for i in r]
         for plot in plots:
             with open(plot, "w"):
                 pass

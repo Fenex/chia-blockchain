@@ -220,9 +220,9 @@ async def create_plots(
         dt_string = datetime.now().strftime("%Y-%m-%d-%H-%M")
 
         if use_datetime:
-            filename: str = f"plot-k{args.size}-{dt_string}-{plot_id}.plot"
+            filename: str = f"plot-k{args.size}-{dt_string}-{plot_id}.db"
         else:
-            filename = f"plot-k{args.size}-{plot_id}.plot"
+            filename = f"plot-k{args.size}-{plot_id}.db"
         full_path: Path = args.final_dir / filename
 
         if not full_path.exists():

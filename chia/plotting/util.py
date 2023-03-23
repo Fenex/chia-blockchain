@@ -157,7 +157,7 @@ def get_filenames(directory: Path, recursive: bool) -> List[Path]:
     all_files: List[Path] = []
     try:
         glob_function = directory.rglob if recursive else directory.glob
-        all_files = [child for child in glob_function("*.plot") if child.is_file() and not child.name.startswith("._")]
+        all_files = [child for child in glob_function("*.db") if child.is_file() and not child.name.startswith("._")]
         log.debug(f"get_filenames: {len(all_files)} files found in {directory}, recursive: {recursive}")
     except Exception as e:
         log.warning(f"Error reading directory {directory} {e}")
@@ -229,7 +229,7 @@ def find_duplicate_plot_IDs(all_filenames=None) -> None:
             else:
                 plot_ids_set.add(plot_id)
         else:
-            log.warning(f"{filename} does not end with -[64 char plot ID].plot")
+            log.warning(f"{filename} does not end with -[64 char plot ID].db")
 
     for plot_id in duplicate_plot_ids:
         log_message: str = plot_id + " found in multiple files:\n"
